@@ -7,22 +7,24 @@ import OffersRankSortingButtonBox from "./s/offersRankSortingButtonBox";
 export default function OffersRankComponent() {
   const { t } = useTranslation();
 
-  return  (<Grid container
+  return (<Grid container
     spacing={1}
-    border={1} borderColor="red"
-    margin="auto">
-      <Grid item xs={12}>
-        <Grid container justifyContent="center">
-          <Grid item>
-            <Typography variant="h5">
-              {t("offersRank")}  
-            </Typography>
-          </Grid>
-          <Grid item pl={1}>
-            <OffersRankSortingButtonBox/>
-          </Grid> 
+    borderRadius="20px"
+    bgcolor="#ffffff"
+    margin="auto"
+    padding="10px">
+    <Grid item xs={12}>
+      <Grid container justifyContent="center">
+        <Grid item>
+          <Typography variant="h5">
+            {t("offersRank")}
+          </Typography>
+        </Grid>
+        <Grid item pl={1}>
+          <OffersRankSortingButtonBox />
         </Grid>
       </Grid>
-      <Grid item xs={12}>Content</Grid>
-    </Grid>);
+    </Grid>
+    <Grid item xs={12}>Content</Grid>
+  </Grid>);
 }

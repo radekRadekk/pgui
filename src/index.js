@@ -22,7 +22,8 @@ const resources = {
       uniqueViews: "Unique Views",
       noOffersText: "You don’t have any offers yet...",
       noOrdersText:
-        "You don’t have any orders. Let’s see how to promote your offers."
+        "You don’t have any orders. Let’s see how to promote your offers.",
+      changeLanguage: "Change language"
     }
   },
   pl: {
@@ -41,7 +42,8 @@ const resources = {
       uniqueViews: "Unikalne wyświetlenia",
       noOffersText: "Nie posiadasz na razie żadnych ofert...",
       noOrdersText:
-        "Nie posiadasz żadnych zamówień. Zobacz jak promować swoje oferty."
+        "Nie posiadasz żadnych zamówień. Zobacz jak promować swoje oferty.",
+      changeLanguage: "Zmień język"
     }
   }
 };

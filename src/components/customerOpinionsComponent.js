@@ -10,20 +10,22 @@ export default function CustomerOpinionsComponent() {
 
   return <Grid container
     spacing={1}
-    border={1} borderColor="red"
-    margin="auto">
-      <Grid item xs={12}>
-        <Grid container justifyContent="center">
-          <Grid item>
-            <Typography variant="h5">
-              {t("customerOpinions")}  
-            </Typography>
-          </Grid>
-          <Grid item pl={1}>
-            <OpinionCategoriesButtonBox/>
-          </Grid> 
+    borderRadius="20px"
+    bgcolor="#ffffff"
+    margin="auto"
+    padding="10px">
+    <Grid item xs={12}>
+      <Grid container justifyContent="center">
+        <Grid item>
+          <Typography variant="h5">
+            {t("customerOpinions")}
+          </Typography>
+        </Grid>
+        <Grid item pl={1}>
+          <OpinionCategoriesButtonBox />
         </Grid>
       </Grid>
-      <Grid item xs={12}>Content</Grid>
-    </Grid>;
+    </Grid>
+    <Grid item xs={12}>Content</Grid>
+  </Grid>;
 }

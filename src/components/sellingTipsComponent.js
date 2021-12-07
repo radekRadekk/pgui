@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Button from "@material-ui/core/Button";
 import { useState } from "react";
 import i18n from "i18next";
+import Typography from "@material-ui/core/Typography";
+
 
 export default function SellingTipsComponent() {
   const { t } = useTranslation();
@@ -17,23 +18,27 @@ export default function SellingTipsComponent() {
   const [tipIdx, setTipIdx] = useState(0);
 
   return (
-    <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          spacing={1}
-          textAlign="center"
-          backgroundColor="red"
-          margin="auto"
-          padding="10px"
-        >
-          <Grid item xs={12}>
-            <h2>{t("sellingTips")}</h2>
+    <Grid container
+      spacing={1}
+      borderRadius="20px"
+      bgcolor="#ffffff" 
+      margin="auto"
+      padding="10px">
+      <Grid item xs={12}>
+        <Grid container justifyContent="center">
+          <Grid item>
+            <Typography variant="h5">
+              {t("sellingTips")}
+            </Typography>
           </Grid>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container align="center">
           <Grid item xs={12}>
-            <topography variant="h1">
+            <Typography variant="h6">
               {i18n.language === "en" ? tips[tipIdx].en : tips[tipIdx].pl}
-            </topography>
+            </Typography>
           </Grid>
           <Grid item xs={12}>
             <Button
@@ -45,7 +50,6 @@ export default function SellingTipsComponent() {
             </Button>
           </Grid>
         </Grid>
-      </Box>
-    </div>
-  );
+      </Grid>
+    </Grid>);
 }
