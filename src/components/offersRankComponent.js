@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
-import { Grid, Box, Item } from "@mui/material";
+import { Grid } from "@mui/material";
 import OffersRankSortingButtonBox from "./s/offersRankSortingButtonBox";
 
 export default function OffersRankComponent() {

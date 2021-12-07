@@ -1,9 +1,8 @@
 import React from "react";
-import CustomerOpinionComponent from "./s/customerOpinionComponent";
 import OpinionCategoriesButtonBox from "./s/opinionCategoriesButtonBox";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
-import { Grid, Box, Item } from "@mui/material";
+import { Grid } from "@mui/material";
 
 export default function CustomerOpinionsComponent() {
   const { t } = useTranslation();

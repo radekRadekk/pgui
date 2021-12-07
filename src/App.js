@@ -1,11 +1,8 @@
 import "./App.css";
 import { ThemeProvider } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
-import { yellow, grey, purple, green, blue } from "material-ui/colors";
-import i18n from "i18next";
-import { useTranslation } from "react-i18next";
+import { grey, green, blue } from "material-ui/colors";
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 
 import SellingTipsComponent from "./components/sellingTipsComponent";
 import SellingPlotComponent from "./components/sellingPlotComponent";
@@ -40,7 +37,6 @@ export const dark = {
 };
 
 function App() {
-  // const { t } = useTranslation();
   const [theme, setTheme] = useState(true);
   const appliedTheme = createTheme(theme ? light : dark);
 
