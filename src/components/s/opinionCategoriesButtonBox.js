@@ -1,30 +1,22 @@
 import React from "react";
 import { IconButton } from "@mui/material";
-// import {
-//   SentimentNeutralRoundedIcon,
-//   SentimentDissatisfiedRoundedIcon,
-//   SentimentSatisfiedRoundedIcon
-// } from "@mui/icons-material";
+import SentimentSatisfiedRoundedIcon from '@mui/icons-material/SentimentSatisfiedRounded';
+import SentimentNeutralRoundedIcon from '@mui/icons-material/SentimentNeutralRounded';
+import SentimentDissatisfiedRoundedIcon from '@mui/icons-material/SentimentDissatisfiedRounded';
 import { Grid, Box, Item } from "@mui/material";
 
-export default function OpinionCategoriesButtonBox() {
+export default function OpinionCategoriesButtonBox(props) {
   return (
-    <Grid container spacing={3}>
-      <Grid item xs="auto">
-        <IconButton>
-          {/* <SentimentSatisfiedRoundedIcon /> */}
-        </IconButton>
-      </Grid>
-      <Grid item xs="auto">
-        <IconButton>
-          {/* <SentimentNeutralRoundedIcon /> */}
-        </IconButton>
-      </Grid>
-      <Grid item xs="auto">
-        <IconButton>
-          {/* <SentimentDissatisfiedRoundedIcon /> */}
-        </IconButton>
-      </Grid>
-    </Grid>
+    <Box bgcolor="primary.main" borderRadius={3} >
+      <IconButton size = 'small' onClick={props.onHappyClick}>
+        <SentimentSatisfiedRoundedIcon />
+      </IconButton>
+      <IconButton size = 'small' onClick={props.onNeutralClick}>
+        <SentimentNeutralRoundedIcon  />
+      </IconButton>
+      <IconButton size = 'small' onClick={props.onSadClick}>
+        <SentimentDissatisfiedRoundedIcon />
+      </IconButton>
+    </Box>
   );
 }

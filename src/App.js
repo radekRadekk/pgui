@@ -1,10 +1,7 @@
 import "./App.css";
 import { ThemeProvider } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
-import green from "material-ui/colors/green";
-import purple from "material-ui/colors/purple";
-import grey from "material-ui/colors/grey";
-import yellow from "material-ui/colors/yellow";
+import {yellow, grey, purple, green, blue} from "material-ui/colors";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
@@ -23,10 +20,10 @@ export const light = {
   palette: {
     type: "light",
     primary: {
-      main: purple[500]
+      main: green[500]
     },
     secondary: {
-      main: green[500]
+      main: grey[500]
     }
   }
 };
@@ -35,10 +32,10 @@ export const dark = {
   palette: {
     type: "dark",
     primary: {
-      main: grey[500]
+      main: blue[500]
     },
     secondary: {
-      main: yellow[500]
+      main: grey[500]
     }
   }
 };
@@ -58,16 +55,12 @@ function App() {
           i18n.language === "en"
             ? i18n.changeLanguage("pl")
             : i18n.changeLanguage("en");
-        }}
-      >
-        {t("orders")}
-      </Button>
+        }}>{t("orders")}</Button>
       <SellingTipsComponent />
       <SellingPlotComponent />
       <OrdersComponent />
       <OffersRankComponent />
       <CustomerOpinionsComponent />
-      <OpinionCategoriesButtonBox />
     </ThemeProvider>
   );
 }
