@@ -2,7 +2,59 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+const resources = {
+  en: {
+    translation: {
+      orders: "Orders",
+      sellingTips: "Selling Tips",
+      sellingPlot: "Selling Plot",
+      customerOpinions: "Customer Opinions",
+      offersRank: "Offers Rank",
+      unpaid: "Unpaid",
+      unsent: "Unsent",
+      returns: "Returns",
+      nextTip: "Next Tip",
+      soldQuant: "Sold Quantity",
+      turnover: "Turnover",
+      uniqueViews: "Unique Views",
+      noOffersText: "You don’t have any offers yet...",
+      noOrdersText:
+        "You don’t have any orders. Let’s see how to promote your offers."
+    }
+  },
+  pl: {
+    translation: {
+      orders: "Zamówienia",
+      sellingTips: "Porady sprzedażowe",
+      sellingPlot: "Wykres sprzedaży",
+      customerOpinions: "Opinie kupujących",
+      offersRank: "Ranking ofert",
+      unpaid: "Nieopłacone",
+      unsent: "Niewysłane",
+      returns: "Zwroty",
+      nextTip: "Następna porada",
+      soldQuant: "Sprzedanych sztuk",
+      turnover: "Obrót",
+      uniqueViews: "Unikalne wyświetlenia",
+      noOffersText: "Nie posiadasz na razie żadnych ofert...",
+      noOrdersText:
+        "Nie posiadasz żadnych zamówień. Zobacz jak promować swoje oferty."
+    }
+  }
+};
+
+i18n.use(initReactI18next).init({
+  resources: resources,
+  lng: "pl",
+  fallbackLng: "en",
+
+  interpolation: {
+    escapeValue: false
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,8 +62,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
