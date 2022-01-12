@@ -5,12 +5,13 @@ import { Grid } from "@mui/material";
 import ChartTypeButtonBox from "./s/chartTypeButtonBox"
 import MeasureTypeButtonBox from "./s/measureTypeButtonBox"
 import TimeRangeButtonBox from "./s/timeRangeButtonBox"
-
+import { useTheme } from '@material-ui/core/styles';
 import ReactEcharts from "echarts-for-react";
 
 
 export default function SellingPlotComponent(props) {
   const { t } = useTranslation();
+  const theme = useTheme();
   const [chartType, setChartType] = useState("line");
   const [measureType, setMeasureType] = useState("money")
   const [timeRange, setTimeRange] = useState("previous_week")
@@ -146,11 +147,12 @@ export default function SellingPlotComponent(props) {
     borderRadius="20px"
     bgcolor="#ffffff"
     margin="auto"
-    padding="10px">
+    padding="10px"
+    bgcolor={theme.palette.background.paper}>
     <Grid item xs={12}>
       <Grid container justifyContent="center">
         <Grid item>
-          <Typography variant="h5">
+          <Typography color="textPrimary" variant="h5">
             {t("sellingPlot")}
           </Typography>
         </Grid>

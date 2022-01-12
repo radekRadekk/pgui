@@ -4,10 +4,13 @@ import SentimentSatisfiedRoundedIcon from '@mui/icons-material/SentimentSatisfie
 import SentimentNeutralRoundedIcon from '@mui/icons-material/SentimentNeutralRounded';
 import SentimentDissatisfiedRoundedIcon from '@mui/icons-material/SentimentDissatisfiedRounded';
 import { Box } from "@mui/material";
+import { useTheme } from '@material-ui/core/styles';
 
 export default function OpinionCategoriesButtonBox(props) {
+  const theme = useTheme();
+
   return (
-    <Box bgcolor="primary.main" borderRadius={3} >
+    <Box bgcolor={theme.palette.primary.main} borderRadius={3} >
       <IconButton size='small' onClick={() => props.setRank(3)} disabled={props.rank === 3}>
         <SentimentSatisfiedRoundedIcon />
       </IconButton>

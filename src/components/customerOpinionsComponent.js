@@ -10,9 +10,11 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { useTheme } from '@material-ui/core/styles';
 
 export default function CustomerOpinionsComponent(props) {
   const { t } = useTranslation();
+  const theme = useTheme();
   const [rank, setRank] = useState(2)
   const [opinions, setOpinions] = useState([])
 
@@ -32,11 +34,12 @@ export default function CustomerOpinionsComponent(props) {
     spacing={1}
     borderRadius="20px"
     bgcolor="#ffffff"
-    padding="10px">
+    padding="10px"
+    bgcolor={theme.palette.background.paper}>
     <Grid item xs={12}>
       <Grid container justifyContent="center">
         <Grid item>
-          <Typography variant="h5">
+          <Typography color={"textPrimary"} variant="h5">
             {t("customerOpinions")}
           </Typography>
         </Grid>
@@ -49,7 +52,7 @@ export default function CustomerOpinionsComponent(props) {
       {
         opinions.length === 0 ?
           <Grid container spacing={2} justifyContent="center" paddingTop="10px">
-            <Typography variant="h6">
+            <Typography color={"textSecondary"} variant="h6">
               <b>{t("lackOfOpinionsText")}</b>
             </Typography>
           </Grid>
@@ -58,8 +61,16 @@ export default function CustomerOpinionsComponent(props) {
             <Table sx={{ minWidth: 100 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell><b>{t("mark")}</b></TableCell>
-                  <TableCell><b>{t("text")}</b></TableCell>
+                  <TableCell>
+                    <Typography color="textSecondary" variant="body1" sx={{ fontWeight: 'bold' }}>
+                      <b>{t("mark")}</b>
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography color="textSecondary" variant="body1" sx={{ fontWeight: 'bold' }}>
+                      <b>{t("text")}</b>
+                    </Typography>
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -68,8 +79,16 @@ export default function CustomerOpinionsComponent(props) {
                     key={idx}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
-                    <TableCell align="center" width={"40px"}>{opinion.mark}</TableCell>
-                    <TableCell>{opinion.text}</TableCell>
+                    <TableCell align="center" width={"40px"}>
+                      <Typography color="textSecondary" variant="body1">
+                        {opinion.mark}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography color="textSecondary" variant="body1">
+                        {opinion.text}
+                      </Typography>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

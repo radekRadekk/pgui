@@ -3,9 +3,12 @@ import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
 import OrderCategoryComponent from "./s/orderCategoryComponent"
+import { useTheme } from '@material-ui/core/styles';
 
 export default function OrdersComponent(props) {
   const { t } = useTranslation();
+  const theme = useTheme();
+    
   const [ordersData, setOrdersData] = useState({
     "unpaid": 0,
     "unsent": 0,
@@ -28,11 +31,12 @@ export default function OrdersComponent(props) {
     spacing={1}
     borderRadius="20px"
     bgcolor="#ffffff"
-    padding="10px">
+    padding="10px"
+    bgcolor={theme.palette.background.paper}>
     <Grid item xs={12}>
       <Grid container justifyContent="center">
         <Grid item>
-          <Typography variant="h5">
+          <Typography color={"textPrimary"} variant="h5">
             {t("orders")}
           </Typography>
         </Grid>
@@ -54,7 +58,7 @@ export default function OrdersComponent(props) {
             </Grid>
           </Grid>
           : <Grid container spacing={2} justifyContent="center" paddingTop="10px">
-            <Typography variant="h6">
+            <Typography color={"textSecondary"} variant="h6">
               <b>{t("lackOfOrdersText")}</b>
             </Typography>
           </Grid>

@@ -12,8 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import Grid from "@mui/material/Grid";
+import { useTheme } from '@material-ui/core/styles';
 
-import TextField from '@mui/material/TextField';
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -63,7 +63,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 export default function NavbarComponent(props) {
   const { t } = useTranslation();
-
+  const theme = useTheme();
   const handleChange = (event) => {
     props.setNickname(event.target.value);
   };

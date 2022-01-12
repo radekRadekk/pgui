@@ -6,14 +6,13 @@ import {Link} from "react-router-dom";
 
 export default function OrderCategoryComponent(props) {
     return <Grid container
-        border={1} borderColor="darkgray"
         bgcolor="gray"
         borderRadius="10px"
         margin="10px">
         <Grid item xs={12}>
             <Grid container justifyContent="center">
                 <Grid item xs={12}>
-                    <Typography variant="h2" align="center">
+                    <Typography color="textPrimary" variant="h2" align="center">
                         {props.number}
                     </Typography>
                 </Grid>
@@ -22,7 +21,7 @@ export default function OrderCategoryComponent(props) {
                         <Typography variant="h6" align="center">
                             {props.name}
                         </Typography>
-                        </Link>
+                    </Link>
                 </Grid>
             </Grid>
         </Grid>

@@ -5,11 +5,11 @@ import Button from "@material-ui/core/Button";
 import { useState, useEffect } from "react";
 import i18n from "i18next";
 import Typography from "@material-ui/core/Typography";
-
+import { useTheme } from '@material-ui/core/styles';
 
 export default function SellingTipsComponent() {
   const { t } = useTranslation();
-
+  const theme = useTheme();
   const [tips, setTips] = useState([
     {
       "pl": "",
@@ -31,11 +31,12 @@ export default function SellingTipsComponent() {
       spacing={1}
       borderRadius="20px"
       bgcolor="#ffffff"
-      padding="10px">
+      padding="10px"
+      bgcolor={theme.palette.background.paper}>
       <Grid item xs={12}>
         <Grid container justifyContent="center">
           <Grid item>
-            <Typography variant="h5">
+            <Typography color="textPrimary" variant="h5">
               {t("sellingTips")}
             </Typography>
           </Grid>
@@ -44,7 +45,7 @@ export default function SellingTipsComponent() {
       <Grid item xs={12}>
         <Grid container align="center">
           <Grid item xs={12}>
-            <Typography variant="h6">
+            <Typography color="textSecondary" variant="h6">
               {i18n.language === "en" ? tips[tipIdx]["en"] : tips[tipIdx]["pl"]}
             </Typography>
           </Grid>

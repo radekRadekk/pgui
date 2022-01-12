@@ -1,6 +1,7 @@
 import "./App.css";
 import { ThemeProvider } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
+import GlobalStyles from "@mui/material/GlobalStyles";
 import { grey, green, blue } from "material-ui/colors";
 
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,18 +14,15 @@ import OffersRankComponent from "./components/offersRankComponent";
 import CustomerOpinionsComponent from "./components/customerOpinionsComponent";
 import Grid from "@mui/material/Grid";
 import NavbarComponent from "./components/navbarComponent";
-import { Outlet, Link } from "react-router-dom";
-import Button from "@mui/material/Button";
-import { amber } from "@material-ui/core/colors";
 
 export const light = {
   palette: {
     type: "light",
     primary: {
       main: blue[200],
-      background: {
-        default: "#e4f0e2"
-      }
+    },
+    background: {
+      default: "#bdbdbd"
     },
   }
 };
@@ -33,14 +31,9 @@ export const dark = {
   palette: {
     type: "dark",
     primary: {
-      main: green[200]
+      main: blue[800],
     },
-    background: {
-      default: "#222222"
-    },
-    contrastText: green[200],
   }
-
 };
 
 
@@ -65,8 +58,13 @@ function App() {
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
+      <GlobalStyles
+        styles={{
+          body: { backgroundColor: appliedTheme.palette.background.default}
+        }}
+      />
       <NavbarComponent nicknames={nicknamesList} currentNickname={nickname} setNickname={(nickname)=>setNickname(nickname)} changeTheme={() => setTheme(!theme)}></NavbarComponent>
-      <Grid container align="center" justifyContent="center" spacing={0} bgcolor="#bdbdbd">
+      <Grid container align="center" justifyContent="center" spacing={0}>
         <Grid item xs={12} md={8}>
           <Grid container>
             <Grid item xs={12} padding="20px">
