@@ -65,7 +65,7 @@ function App() {
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
-      <NavbarComponent changeTheme={() => setTheme(!theme)}></NavbarComponent>
+      <NavbarComponent nicknames={nicknamesList} currentNickname={nickname} setNickname={(nickname)=>setNickname(nickname)} changeTheme={() => setTheme(!theme)}></NavbarComponent>
       <Grid container align="center" justifyContent="center" spacing={0} bgcolor="#bdbdbd">
         <Grid item xs={12} md={8}>
           <Grid container>

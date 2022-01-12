@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 const users = ["SklepIdylla", "Galakpizza"];
 
 export default function LoginPage() {
-  const [user, setUser] = React.useState();
+  const [user, setUser] = React.useState(users[0]);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -17,18 +17,17 @@ export default function LoginPage() {
 
     return (
     <Grid
+      spacing={1}
       container
       direction="column"
       alignItems="center"
       justifyContent="center"
-      style={{ minHeight: '100vh' }}
-    >
+      style={{ minHeight: '100vh' }}>
     
       <Grid item xs={3}>
         <TextField
-          id="outlined-select-currency"
           select
-          label="Select user"
+          label="Nick"
           value={user}
           onChange={handleChange}
         >
@@ -38,13 +37,16 @@ export default function LoginPage() {
             </MenuItem>
           ))}
         </TextField>
+      </Grid>
+
+      <Grid item xs={3}>
         <Button
           variant="contained"
           onClick={()=> {
             localStorage.setItem('user', user);
             navigate('/home');
           }}>
-          Submitt
+          Log in
         </Button>
       </Grid>
     </Grid> 

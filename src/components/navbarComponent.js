@@ -8,9 +8,12 @@ import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Switch from '@mui/material/Switch';
-
+import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
+import Select from '@mui/material/Select';
+import Grid from "@mui/material/Grid";
 
+import TextField from '@mui/material/TextField';
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -58,28 +61,58 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-
 export default function NavbarComponent(props) {
   const { t } = useTranslation();
 
-  return (
+  const handleChange = (event) => {
+    props.setNickname(event.target.value);
+  };
+
+  return (    
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" style={{
-        background: "gray"
-      }}>
+      <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            PGUI
-          </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              i18n.language === "en"
-                ? i18n.changeLanguage("pl")
-                : i18n.changeLanguage("en");
-            }}>{t("changeLanguage")}</Button>
-          <MaterialUISwitch onChange={props.changeTheme}></MaterialUISwitch>
+          <Grid container
+            direction="row"
+            justifyContent="center"
+            allingContent="center"
+            spacing={1}
+          >
+            <Grid item pl={1}>
+              <Typography variant="h6">
+                PGUI
+              </Typography>
+            </Grid>
+
+            <Grid item pl={1}>
+              <Select
+              value={props.currentNickname}
+              onChange={handleChange}
+            >
+              {props.nicknames.map((nickname) => (
+                <MenuItem key={nickname} value={nickname}>
+                  <div>{nickname}</div>
+                </MenuItem>
+              ))}
+            </Select>
+            </Grid>
+
+            <Grid item pl={1}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => {
+                  i18n.language === "en"
+                    ? i18n.changeLanguage("pl")
+                    : i18n.changeLanguage("en");
+                }}>{t("changeLanguage")}
+              </Button>
+            </Grid>
+
+            <Grid item pl={1}>
+              <MaterialUISwitch onChange={props.changeTheme}></MaterialUISwitch>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </Box>
