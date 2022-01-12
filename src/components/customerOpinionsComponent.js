@@ -41,13 +41,13 @@ export default function CustomerOpinionsComponent(props) {
           </Typography>
         </Grid>
         <Grid item pl={1}>
-          <OpinionCategoriesButtonBox setRank={setRank} />
+          <OpinionCategoriesButtonBox setRank={setRank} rank={rank}/>
         </Grid>
       </Grid>
     </Grid>
     <Grid item xs={12}>
       {
-        (opinions.lenght === 0) ?
+        opinions.length === 0 ?
           <Grid container spacing={2} justifyContent="center" paddingTop="10px">
             <Typography variant="h6">
               <b>{t("lackOfOpinionsText")}</b>

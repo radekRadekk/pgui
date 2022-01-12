@@ -8,13 +8,13 @@ import { Box } from "@mui/material";
 export default function OpinionCategoriesButtonBox(props) {
   return (
     <Box bgcolor="primary.main" borderRadius={3} >
-      <IconButton size='small' onClick={() => props.setRank(3)}>
+      <IconButton size='small' onClick={() => props.setRank(3)} disabled={props.rank === 3}>
         <SentimentSatisfiedRoundedIcon />
       </IconButton>
-      <IconButton size='small' onClick={() => props.setRank(2)}>
+      <IconButton size='small' onClick={() => props.setRank(2)} disabled={props.rank === 2}>
         <SentimentNeutralRoundedIcon />
       </IconButton>
-      <IconButton size='small' onClick={() => props.setRank(1)}>
+      <IconButton size='small' onClick={() => props.setRank(1)} disabled={props.rank === 1}>
         <SentimentDissatisfiedRoundedIcon />
       </IconButton>
     </Box>
