@@ -30,7 +30,7 @@ export default function OrdersComponent() {
     spacing={1}
     borderRadius="20px"
     bgcolor="#ffffff"
-    margin="auto">
+    padding="10px">
     <Grid item xs={12}>
       <Grid container justifyContent="center">
         <Grid item>
@@ -43,13 +43,14 @@ export default function OrdersComponent() {
     <Grid item xs={12} padding="10px">
       <Grid container spacing={2}>
         <Grid item xs={12} md={4} padding="10px">
-          <OrderCategoryComponent name={t("unpaid")} number={data['unpaid']} />
+          <OrderCategoryComponent name={t("unpaid")} link="/unpaid-orders" number={data['unpaid']} />
         </Grid>
         <Grid item xs={12} md={4} padding="10px">
-          <OrderCategoryComponent name={t("unsent")} number={data['unsent']} />
+          <OrderCategoryComponent name={t("unsent")} link="/unsent-orders" number={data['unsent']} />
         </Grid>
         <Grid item xs={12} md={4} padding="10px">
-          <OrderCategoryComponent name={t("returns")} number={data['returns']} />
+          <OrderCategoryComponent name={t("returns")} link="/returned-orders" number={data['returns']} />
+
         </Grid>
       </Grid>
     </Grid>

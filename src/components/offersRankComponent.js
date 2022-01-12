@@ -11,7 +11,6 @@ export default function OffersRankComponent() {
     spacing={1}
     borderRadius="20px"
     bgcolor="#ffffff"
-    margin="auto"
     padding="10px">
     <Grid item xs={12}>
       <Grid container justifyContent="center">

@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import Typography from "@material-ui/core/Typography";
+import {Link} from "react-router-dom";
 
 
 export default function OrderCategoryComponent(props) {
@@ -17,9 +18,11 @@ export default function OrderCategoryComponent(props) {
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <Typography variant="h6" align="center">
-                        {props.name}
-                    </Typography>
+                    <Link to={props.link}>
+                        <Typography variant="h6" align="center">
+                            {props.name}
+                        </Typography>
+                        </Link>
                 </Grid>
             </Grid>
         </Grid>

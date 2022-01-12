@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import CustomersOpinions from './routes/customersOpinions';
+import ReturnedOrders from './routes/returnedOrders';
+import UnpaidOrders from './routes/unpaidOrders';
+import UnsentOrders from './routes/unsentOrders';
 
 const resources = {
   en: {
@@ -98,7 +103,15 @@ i18n.use(initReactI18next).init({
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="customers-opinions" element={<CustomersOpinions />} />
+        <Route path="returned-orders" element={<ReturnedOrders />} />
+        <Route path="unpaid-orders" element={<UnpaidOrders />} />
+        <Route path="unsent-orders" element={<UnsentOrders />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

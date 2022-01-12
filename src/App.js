@@ -2,6 +2,8 @@ import "./App.css";
 import { ThemeProvider } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 import { grey, green, blue } from "material-ui/colors";
+
+import CssBaseline from "@mui/material/CssBaseline";
 import React, { useState } from "react";
 
 import SellingTipsComponent from "./components/sellingTipsComponent";
@@ -11,16 +13,19 @@ import OffersRankComponent from "./components/offersRankComponent";
 import CustomerOpinionsComponent from "./components/customerOpinionsComponent";
 import Grid from "@mui/material/Grid";
 import NavbarComponent from "./components/navbarComponent";
+import { Outlet, Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { amber } from "@material-ui/core/colors";
 
 export const light = {
   palette: {
     type: "light",
     primary: {
-      main: green[500]
+      main: blue[200],
+      background: {
+        default: "#e4f0e2"
+      }
     },
-    secondary: {
-      main: grey[500]
-    }
   }
 };
 
@@ -28,41 +33,52 @@ export const dark = {
   palette: {
     type: "dark",
     primary: {
-      main: blue[500]
+      main: green[200]
     },
-    secondary: {
-      main: grey[500]
-    }
+    background: {
+      default: "#222222"
+    },
+    contrastText:green[200],
   }
+  
 };
+
+
 
 function App() {
   const [theme, setTheme] = useState(true);
   const appliedTheme = createTheme(theme ? light : dark);
 
+
   return (
     <ThemeProvider theme={appliedTheme}>
-      <NavbarComponent padding="10px" ></NavbarComponent>
-      <Grid container
-        borderRadius="20px"
-        bgcolor="#bdbdbd"
-      >
-        <Grid item xs={12}>
-          <Grid container align="center">
-            <Grid item xs={12} padding="5px" margin="10px">
-              <SellingTipsComponent />
-            </Grid>
-            <Grid item xs={12} padding="5px" margin="10px">
-              <SellingPlotComponent />
-            </Grid>
-            <Grid item xs={12} padding="5px" margin="10px">
+      <CssBaseline />
+      <NavbarComponent changeTheme={()=>setTheme(!theme)}></NavbarComponent>
+      <Grid container align="center" justifyContent="center" spacing={0} bgcolor="#bdbdbd">
+        <Grid item xs={12} md={8}>
+          <Grid container>
+            <Grid item xs={12} padding="20px">
               <OrdersComponent />
             </Grid>
-            <Grid item xs={12} padding="5px" margin="10px">
+            <Grid item xs={12} padding="20px">
+              <SellingPlotComponent />
+            </Grid>
+          </Grid>  
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Grid container>
+            <Grid item xs={12} sm={6} md={12} padding="20px">
               <OffersRankComponent />
             </Grid>
-            <Grid item xs={12} padding="5px" margin="10px">
-              <CustomerOpinionsComponent />
+            <Grid item xs={12} sm={6} md={12}>
+              <Grid container>
+                <Grid item xs={12} padding="20px">
+                  <CustomerOpinionsComponent />
+                </Grid>
+                <Grid item xs={12} padding="20px">
+                  <SellingTipsComponent />
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
