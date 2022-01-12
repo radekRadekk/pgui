@@ -33,7 +33,7 @@ def generate_current_week_sellings(x):
         data["sellings"].append({
             "price": round(random() * randint(10, 100), 2),
             "piecesNum": randint(1, 30),
-            "day": randint(1, 7)
+            "day": randint(0, 6)
         })
 
     return data
@@ -48,7 +48,7 @@ def generate_previous_week_sellings(x):
         data["sellings"].append({
             "price": round(random() * randint(10, 100), 2),
             "piecesNum": randint(1, 30),
-            "month": randint(1, 12)
+            "month": randint(0, 11)
         })
 
     return data

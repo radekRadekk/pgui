@@ -23,7 +23,26 @@ const resources = {
       noOffersText: "You don’t have any offers yet...",
       noOrdersText:
         "You don’t have any orders. Let’s see how to promote your offers.",
-      changeLanguage: "Change language"
+      changeLanguage: "Change language",
+      monday: "Monday",
+      tuesday: "Tuesday",
+      wednesday: "Wednesday",
+      thursday: "Thursday",
+      friday: "Friday",
+      saturday: "Saturday",
+      sunday: "Sunday",
+      january: "January",
+      february: "February",
+      march: "March",
+      april: "April",
+      may: "May",
+      june: "June",
+      july: "July",
+      august: "August",
+      september: "September",
+      october: "October",
+      november: "November",
+      december: "December"
     }
   },
   pl: {
@@ -43,7 +62,26 @@ const resources = {
       noOffersText: "Nie posiadasz na razie żadnych ofert...",
       noOrdersText:
         "Nie posiadasz żadnych zamówień. Zobacz jak promować swoje oferty.",
-      changeLanguage: "Zmień język"
+      changeLanguage: "Zmień język",
+      monday: "Poniedziałek",
+      tuesday: "Wtorek",
+      wednesday: "Środa",
+      thursday: "Czwartek",
+      friday: "Piątek",
+      saturday: "Sobota",
+      sunday: "Niedziela",
+      january: "Styczeń",
+      february: "Luty",
+      march: "Marzec",
+      april: "Kwiecień",
+      may: "Maj",
+      june: "Czerwiec",
+      july: "Lipiec",
+      august: "Sierpień",
+      september: "Wrzesień",
+      october: "Październik",
+      november: "Listopad",
+      december: "Grudzień"
     }
   }
 };
