@@ -103,5 +103,6 @@ export default function OffersRankComponent(props) {
               </TableContainer>
           }
         </Grid>
-      </Grid>);
+      </Grid>
+    </Grid>);
 }
