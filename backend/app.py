@@ -77,6 +77,9 @@ SELLING_TIPS = [
     }
 ]
 
+MASTER_USER_1 = "SklepIdylla"
+MASTER_USER_2 = "Galakpizza"
+
 NICK1 = "JanKowalski"
 NICK2 = "RomanNowak"
 NICK3 = "SebastianOlech"
@@ -108,6 +111,23 @@ NICKNAME3_ORDERS_NUMS = {
     "unsent": 0,
     "returns": 0
 }
+
+
+@app.route("/masterUsers/<string:master_user>/users")
+def get_children_nicknames(master_user):
+    if master_user == MASTER_USER_1:
+        return {
+            "nicknames": [
+                NICK1,
+                NICK3
+            ]
+        }
+    if master_user == MASTER_USER_2:
+        return {
+            "nicknames": [
+                NICK2
+            ]
+        }
 
 
 @app.route("/users/<string:nickname>/orders")

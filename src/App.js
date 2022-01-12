@@ -38,9 +38,9 @@ export const dark = {
     background: {
       default: "#222222"
     },
-    contrastText:green[200],
+    contrastText: green[200],
   }
-  
+
 };
 
 
@@ -48,22 +48,23 @@ export const dark = {
 function App() {
   const [theme, setTheme] = useState(true);
   const appliedTheme = createTheme(theme ? light : dark);
-
+  const [nickname, setNickname] = useState("JanKowalski")
+  
 
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
-      <NavbarComponent changeTheme={()=>setTheme(!theme)}></NavbarComponent>
+      <NavbarComponent changeTheme={() => setTheme(!theme)}></NavbarComponent>
       <Grid container align="center" justifyContent="center" spacing={0} bgcolor="#bdbdbd">
         <Grid item xs={12} md={8}>
           <Grid container>
             <Grid item xs={12} padding="20px">
-              <OrdersComponent />
+              <OrdersComponent nickname={nickname} />
             </Grid>
             <Grid item xs={12} padding="20px">
-              <SellingPlotComponent />
+              <SellingPlotComponent nickname={nickname} />
             </Grid>
-          </Grid>  
+          </Grid>
         </Grid>
         <Grid item xs={12} md={4}>
           <Grid container>
@@ -73,7 +74,7 @@ function App() {
             <Grid item xs={12} sm={6} md={12}>
               <Grid container>
                 <Grid item xs={12} padding="20px">
-                  <CustomerOpinionsComponent />
+                  <CustomerOpinionsComponent nickname={nickname} />
                 </Grid>
                 <Grid item xs={12} padding="20px">
                   <SellingTipsComponent />

@@ -9,14 +9,12 @@ import TimeRangeButtonBox from "./s/timeRangeButtonBox"
 import ReactEcharts from "echarts-for-react";
 
 
-export default function SellingPlotComponent() {
+export default function SellingPlotComponent(props) {
   const { t } = useTranslation();
   const [chartType, setChartType] = useState("line");
   const [measureType, setMeasureType] = useState("money")
   const [timeRange, setTimeRange] = useState("previous_week")
   const [seriesData, setSeriesData] = useState([])
-
-  const nickname = "JanKowalski";
 
   const barOnClick = () => {
     setChartType("bar");
@@ -78,7 +76,7 @@ export default function SellingPlotComponent() {
 
   const getSeriesDataToday = () => {
     if (measureType === "money")
-      fetch(`http://127.0.0.1:5000/users/${nickname}/sellings?period=${timeRange}`)
+      fetch(`http://127.0.0.1:5000/users/${props.nickname}/sellings?period=${timeRange}`)
         .then(response => response.json())
         .then(data => {
           let moneys = new Array(24);
@@ -89,7 +87,7 @@ export default function SellingPlotComponent() {
           setSeriesData(moneys);
         });
     if (measureType === "piece")
-      fetch(`http://127.0.0.1:5000/users/${nickname}/sellings?period=${timeRange}`)
+      fetch(`http://127.0.0.1:5000/users/${props.nickname}/sellings?period=${timeRange}`)
         .then(response => response.json())
         .then(data => {
           let pieces = new Array(24);
@@ -102,7 +100,7 @@ export default function SellingPlotComponent() {
 
   const getSeriesDataCurrentWeek = () => {
     if (measureType === "money")
-      fetch(`http://127.0.0.1:5000/users/${nickname}/sellings?period=${timeRange}`)
+      fetch(`http://127.0.0.1:5000/users/${props.nickname}/sellings?period=${timeRange}`)
         .then(response => response.json())
         .then(data => {
           let moneys = new Array(7);
@@ -113,7 +111,7 @@ export default function SellingPlotComponent() {
           setSeriesData(moneys);
         });
     if (measureType === "piece")
-      fetch(`http://127.0.0.1:5000/users/${nickname}/sellings?period=${timeRange}`)
+      fetch(`http://127.0.0.1:5000/users/${props.nickname}/sellings?period=${timeRange}`)
         .then(response => response.json())
         .then(data => {
           let pieces = new Array(7);
@@ -126,7 +124,7 @@ export default function SellingPlotComponent() {
 
   const getSeriesDataPreviousWeek = () => {
     if (measureType === "money")
-      fetch(`http://127.0.0.1:5000/users/${nickname}/sellings?period=${timeRange}`)
+      fetch(`http://127.0.0.1:5000/users/${props.nickname}/sellings?period=${timeRange}`)
         .then(response => response.json())
         .then(data => {
           let moneys = new Array(12);
@@ -137,7 +135,7 @@ export default function SellingPlotComponent() {
           setSeriesData(moneys);
         });
     if (measureType === "piece")
-      fetch(`http://127.0.0.1:5000/users/${nickname}/sellings?period=${timeRange}`)
+      fetch(`http://127.0.0.1:5000/users/${props.nickname}/sellings?period=${timeRange}`)
         .then(response => response.json())
         .then(data => {
           let pieces = new Array(12);

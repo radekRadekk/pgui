@@ -47,7 +47,8 @@ const resources = {
       september: "September",
       october: "October",
       november: "November",
-      december: "December"
+      december: "December",
+      lackOfOrdersText: "Familiarize with selling tips and start selling!"
     }
   },
   pl: {
@@ -86,7 +87,8 @@ const resources = {
       september: "Wrzesień",
       october: "Październik",
       november: "Listopad",
-      december: "Grudzień"
+      december: "Grudzień",
+      lackOfOrdersText: "Zapoznaj się z poradami sprzedaży i zacznij sprzedawać!"
     }
   }
 };

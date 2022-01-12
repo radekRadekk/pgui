@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
 import OrderCategoryComponent from "./s/orderCategoryComponent"
 
-export default function OrdersComponent() {
+export default function OrdersComponent(props) {
   const { t } = useTranslation();
   const [ordersData, setOrdersData] = useState({
     "unpaid": 0,
@@ -12,14 +12,12 @@ export default function OrdersComponent() {
     "returns": 0
   });
 
-  const nickname = "JanKowalski";
-
   useEffect(() => {
     loadData();
   }, []);
 
   const loadData = () => {
-    fetch(`http://127.0.0.1:5000/users/${nickname}/orders`)
+    fetch(`http://127.0.0.1:5000/users/${props.nickname}/orders`)
       .then(response => response.json())
       .then(data => {
         setOrdersData(data);
@@ -41,18 +39,26 @@ export default function OrdersComponent() {
       </Grid>
     </Grid>
     <Grid item xs={12} padding="10px">
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={4} padding="10px">
-          <OrderCategoryComponent name={t("unpaid")} link="/unpaid-orders" number={ordersData['unpaid']} />
-        </Grid>
-        <Grid item xs={12} md={4} padding="10px">
-          <OrderCategoryComponent name={t("unsent")} link="/unsent-orders" number={ordersData['unsent']} />
-        </Grid>
-        <Grid item xs={12} md={4} padding="10px">
-          <OrderCategoryComponent name={t("returns")} link="/returned-orders" number={ordersData['returns']} />
+      {
+        (ordersData['unpaid'] !== 0 && ordersData['unsent'] !== 0 && ordersData['returns'] !== 0) ?
 
-        </Grid>
-      </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4} padding="10px">
+              <OrderCategoryComponent name={t("unpaid")} link="/unpaid-orders" number={ordersData['unpaid']} />
+            </Grid>
+            <Grid item xs={12} md={4} padding="10px">
+              <OrderCategoryComponent name={t("unsent")} link="/unsent-orders" number={ordersData['unsent']} />
+            </Grid>
+            <Grid item xs={12} md={4} padding="10px">
+              <OrderCategoryComponent name={t("returns")} link="/returned-orders" number={ordersData['returns']} />
+            </Grid>
+          </Grid>
+          : <Grid container spacing={2} justifyContent="center" paddingTop="10px">
+            <Typography variant="h7">
+              <b>{t("lackOfOrdersText")}</b>
+            </Typography>
+          </Grid>
+      }
     </Grid>
   </Grid>;
 }
