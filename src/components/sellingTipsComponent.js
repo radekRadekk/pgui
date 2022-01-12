@@ -30,7 +30,6 @@ export default function SellingTipsComponent() {
     <Grid container
       spacing={1}
       borderRadius="20px"
-      bgcolor="#ffffff"
       padding="10px"
       bgcolor={theme.palette.background.paper}>
       <Grid item xs={12}>

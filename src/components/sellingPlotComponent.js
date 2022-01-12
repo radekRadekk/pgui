@@ -145,7 +145,6 @@ export default function SellingPlotComponent(props) {
   return <Grid container
     spacing={1}
     borderRadius="20px"
-    bgcolor="#ffffff"
     margin="auto"
     padding="10px"
     bgcolor={theme.palette.background.paper}>
