@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import OpinionCategoriesButtonBox from "./s/opinionCategoriesButtonBox";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
 
-export default function CustomerOpinionsComponent() {
+export default function CustomerOpinionsComponent(props) {
   const { t } = useTranslation();
+  const [opinions, setOpinions] = useState([])
+
+  const loadData = (rank) => {
+
+  }
 
   return <Grid container
     spacing={1}

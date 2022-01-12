@@ -14,7 +14,7 @@ export default function OrdersComponent(props) {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [props.nickname]);
 
   const loadData = () => {
     fetch(`http://127.0.0.1:5000/users/${props.nickname}/orders`)

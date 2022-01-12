@@ -4,7 +4,7 @@ import { createTheme } from "@material-ui/core/styles";
 import { grey, green, blue } from "material-ui/colors";
 
 import CssBaseline from "@mui/material/CssBaseline";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import SellingTipsComponent from "./components/sellingTipsComponent";
 import SellingPlotComponent from "./components/sellingPlotComponent";
@@ -48,8 +48,19 @@ export const dark = {
 function App() {
   const [theme, setTheme] = useState(true);
   const appliedTheme = createTheme(theme ? light : dark);
-  const [nickname, setNickname] = useState("JanKowalski")
-  
+  const [nickname, setNickname] = useState("")
+  const [nicknamesList, setNicknamesList] = useState([])
+
+
+  useEffect(() => {
+    fetch(`http://127.0.0.1:5000//masterUsers/${localStorage.getItem('user')}/users`)
+      .then(response => response.json())
+      .then(data => {
+        setNicknamesList(data["nicknames"]);
+        setNickname(data["nicknames"][0])
+      });
+
+  }, []);
 
   return (
     <ThemeProvider theme={appliedTheme}>

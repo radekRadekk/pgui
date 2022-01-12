@@ -63,7 +63,7 @@ export default function SellingPlotComponent(props) {
 
   useEffect(() => {
     getSeriesData();
-  }, [measureType, timeRange])
+  }, [measureType, timeRange, props.nickname])
 
   const getSeriesData = () => {
     if (timeRange === "today")
