@@ -60,10 +60,10 @@ function App() {
       <CssBaseline />
       <GlobalStyles
         styles={{
-          body: { backgroundColor: appliedTheme.palette.background.default}
+          body: { backgroundColor: appliedTheme.palette.background.default }
         }}
       />
-      <NavbarComponent nicknames={nicknamesList} currentNickname={nickname} setNickname={(nickname)=>setNickname(nickname)} changeTheme={() => setTheme(!theme)}></NavbarComponent>
+      <NavbarComponent nicknames={nicknamesList} currentNickname={nickname} setNickname={(nickname) => setNickname(nickname)} changeTheme={() => setTheme(!theme)}></NavbarComponent>
       <Grid container align="center" justifyContent="center" spacing={0}>
         <Grid item xs={12} md={8}>
           <Grid container>
@@ -78,7 +78,7 @@ function App() {
         <Grid item xs={12} md={4}>
           <Grid container>
             <Grid item xs={12} sm={6} md={12} padding="20px">
-              <OffersRankComponent />
+              <OffersRankComponent nickname={nickname} />
             </Grid>
             <Grid item xs={12} sm={6} md={12}>
               <Grid container>
