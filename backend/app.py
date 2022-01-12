@@ -112,6 +112,144 @@ NICKNAME3_ORDERS_NUMS = {
     "returns": 0
 }
 
+NICKNAME1_CUSTOMERS_OPINIONS_1 = [
+    {
+        "text": "Średni produkt, nie polecam...",
+        "mark": 3
+    },
+    {
+        "text": "Tandeta",
+        "mark": 1
+    },
+    {
+        "text": "2/10",
+        "mark": 2
+    },
+    {
+        "text": "ŻAL!!!",
+        "mark": 1
+    },
+    {
+        "text": "ODDAJ PIENIĄDZE!",
+        "mark": 2
+    }
+]
+NICKNAME1_CUSTOMERS_OPINIONS_2 = [
+    {
+        "text": "Not great, not terible",
+        "mark": 5
+    },
+    {
+        "text": "Good product for this price",
+        "mark": 6
+    },
+    {
+        "text": "Może nie idealnie, ale jako tako",
+        "mark": 6
+    },
+    {
+        "text": "Przynajmniej tanio.",
+        "mark": 7
+    },
+    {
+        "text": "Może być.",
+        "mark": 5
+    }
+]
+NICKNAME1_CUSTOMERS_OPINIONS_3 = [
+    {
+        "text": "Cudowne urządzenie!",
+        "mark": 10
+    },
+    {
+        "text": "Sehr gut :)",
+        "mark": 9
+    },
+    {
+        "text": "I love it <3",
+        "mark": 10
+    },
+    {
+        "text": "Dobry towar",
+        "mark": 8
+    },
+    {
+        "text": "Podoba mi się, polecę znajomym!",
+        "mark": 8
+    }
+]
+
+NICKNAME2_CUSTOMERS_OPINIONS_1 = [
+    {
+        "text": "No złom totalny",
+        "mark": 1
+    },
+    {
+        "text": "Chińskie badziewie",
+        "mark": 2
+    },
+    {
+        "text": "Waste of money",
+        "mark": 2
+    },
+    {
+        "text": "",
+        "mark": 3
+    },
+    {
+        "text": "Tandeta",
+        "mark": 2
+    }
+]
+NICKNAME2_CUSTOMERS_OPINIONS_2 = [
+    {
+        "text": "Akceptowalnie",
+        "mark": 5
+    },
+    {
+        "text": "W miarę",
+        "mark": 6
+    },
+    {
+        "text": "Nie jest źle",
+        "mark": 6
+    },
+    {
+        "text": "",
+        "mark": 5
+    },
+    {
+        "text": "Nie jest dobrze, nie jest też źle. Można powiedzieć, że jest średnio.",
+        "mark": 6
+    }
+]
+NICKNAME2_CUSTOMERS_OPINIONS_3 = [
+    {
+        "text": "Tego potrzebowałem.",
+        "mark": 9
+    },
+    {
+        "text": "Cudne niczym ciepłe, wygazowane piwo.",
+        "mark": 10
+    },
+    {
+        "text": "Gorąco polecam",
+        "mark": 9
+    },
+    {
+        "text": "Dobre urządzenie!",
+        "mark": 8
+    },
+    {
+        "text": "Super!!!",
+        "mark": 10
+    }
+]
+
+NICKNAME3_CUSTOMERS_OPINIONS_1 = []
+NICKNAME3_CUSTOMERS_OPINIONS_2 = []
+NICKNAME3_CUSTOMERS_OPINIONS_3 = []
+
 
 @app.route("/masterUsers/<string:master_user>/users")
 def get_children_nicknames(master_user):
@@ -154,6 +292,60 @@ def get_sellings(nickname):
         return get_sellings_previous_week(nickname)
 
     abort(404)
+
+
+@app.route("/users/<string:nickname>/customersOpinions")
+def get_customers_opinions(nickname):
+    rank = request.args.get("rank")
+    print(rank)
+
+    if nickname == NICK1:
+        if rank == "1":
+            return {
+                "opinions": NICKNAME1_CUSTOMERS_OPINIONS_1
+            }
+        if rank == "2":
+            return {
+                "opinions": NICKNAME1_CUSTOMERS_OPINIONS_2
+            }
+        if rank == "3":
+            return {
+                "opinions": NICKNAME1_CUSTOMERS_OPINIONS_3
+            }
+
+        abort(404)
+
+    if nickname == NICK2:
+        if rank == "1":
+            return {
+                "opinions": NICKNAME2_CUSTOMERS_OPINIONS_1
+            }
+        if rank == "2":
+            return {
+                "opinions": NICKNAME2_CUSTOMERS_OPINIONS_2
+            }
+        if rank == "3":
+            return {
+                "opinions": NICKNAME3_CUSTOMERS_OPINIONS_3
+            }
+
+        abort(404)
+
+    if nickname == NICK3:
+        if rank == "1":
+            return {
+                "opinions": NICKNAME3_CUSTOMERS_OPINIONS_1
+            }
+        if rank == "2":
+            return {
+                "opinions": NICKNAME3_CUSTOMERS_OPINIONS_2
+            }
+        if rank == "3":
+            return {
+                "opinions": NICKNAME3_CUSTOMERS_OPINIONS_3
+            }
+
+        abort(404)
 
 
 @app.route("/sellingTips")
