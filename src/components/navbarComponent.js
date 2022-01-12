@@ -6,13 +6,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 import Switch from '@mui/material/Switch';
-import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
-import Select from '@mui/material/Select';
-import Grid from "@mui/material/Grid";
-import { useTheme } from '@material-ui/core/styles';
+import NativeSelect from '@mui/material/NativeSelect';
+import FormControl from '@mui/material/FormControl';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -68,51 +65,33 @@ export default function NavbarComponent(props) {
     props.setNickname(event.target.value);
   };
 
-  return (    
+  return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static">
         <Toolbar>
-          <Grid container
-            direction="row"
-            justifyContent="center"
-            allingContent="center"
-            spacing={1}
-          >
-            <Grid item pl={1}>
-              <Typography variant="h6">
-                PGUI
-              </Typography>
-            </Grid>
-
-            <Grid item pl={1}>
-              <Select
-              value={props.currentNickname}
-              onChange={handleChange}
-            >
-              {props.nicknames.map((nickname) => (
-                <MenuItem key={nickname} value={nickname}>
-                  <div>{nickname}</div>
-                </MenuItem>
-              ))}
-            </Select>
-            </Grid>
-
-            <Grid item pl={1}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={() => {
-                  i18n.language === "en"
-                    ? i18n.changeLanguage("pl")
-                    : i18n.changeLanguage("en");
-                }}>{t("changeLanguage")}
-              </Button>
-            </Grid>
-
-            <Grid item pl={1}>
-              <MaterialUISwitch onChange={props.changeTheme}></MaterialUISwitch>
-            </Grid>
-          </Grid>
+          <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 1 }}>
+            PGUI
+          </Typography>
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <NativeSelect
+                onChange={handleChange}
+                defaultValue={props.currentNickname}
+              >
+                {props.nicknames.map(nickname => <option value={nickname}>{nickname}</option>)}
+              </NativeSelect>
+            </FormControl>
+          </Box>
+          <MaterialUISwitch edge="end" onChange={props.changeTheme} sx={{ margin: '10px' }}></MaterialUISwitch>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              i18n.language === "en"
+                ? i18n.changeLanguage("pl")
+                : i18n.changeLanguage("en");
+            }}>{t("changeLanguage")}
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

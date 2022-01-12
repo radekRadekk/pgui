@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CustomersOpinionsPage from './routes/customersOpinionsPage';
 import ReturnedOrdersPage from './routes/returnedOrdersPage';
 import UnpaidOrdersPage from './routes/unpaidOrdersPage';
@@ -52,7 +52,8 @@ const resources = {
       lackOfOrdersText: "Familiarize with selling tips and start selling!",
       lackOfOpinionsText: "You don't have opinions from customers yet.",
       mark: "Mark",
-      text: "Text"
+      text: "Text",
+      username: "Username"
     }
   },
   pl: {
@@ -95,7 +96,8 @@ const resources = {
       lackOfOrdersText: "Zapoznaj się z poradami sprzedaży i zacznij sprzedawać!",
       lackOfOpinionsText: "Nie posiadasz jeszcze opinii od kupującego.",
       mark: "Ocena",
-      text: "Tekst"
+      text: "Tekst",
+      username: "Nazwa użytkownika"
     }
   }
 };
