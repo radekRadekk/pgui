@@ -49,7 +49,10 @@ const resources = {
       october: "October",
       november: "November",
       december: "December",
-      lackOfOrdersText: "Familiarize with selling tips and start selling!"
+      lackOfOrdersText: "Familiarize with selling tips and start selling!",
+      lackOfOpinionsText: "You don't have opinions from customers yet.",
+      mark: "Mark",
+      text: "Text"
     }
   },
   pl: {
@@ -89,7 +92,10 @@ const resources = {
       october: "Październik",
       november: "Listopad",
       december: "Grudzień",
-      lackOfOrdersText: "Zapoznaj się z poradami sprzedaży i zacznij sprzedawać!"
+      lackOfOrdersText: "Zapoznaj się z poradami sprzedaży i zacznij sprzedawać!",
+      lackOfOpinionsText: "Nie posiadasz jeszcze opinii od kupującego.",
+      mark: "Ocena",
+      text: "Tekst"
     }
   }
 };

@@ -26,27 +26,22 @@ export default function SellingPlotComponent(props) {
 
   const moneyOnClick = () => {
     setMeasureType("money");
-    getSeriesData();
   };
 
   const pieceOnClick = () => {
     setMeasureType("piece");
-    getSeriesData();
   };
 
   const todayOnClick = () => {
     setTimeRange("today");
-    getSeriesData();
   };
 
   const currentWeekOnClick = () => {
     setTimeRange("current_week");
-    getSeriesData();
   };
 
   const previousWeekOnClick = () => {
     setTimeRange("previous_week");
-    getSeriesData();
   };
 
   const getXAxisData = () => {

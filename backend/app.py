@@ -193,7 +193,7 @@ NICKNAME2_CUSTOMERS_OPINIONS_1 = [
         "mark": 2
     },
     {
-        "text": "",
+        "text": "-",
         "mark": 3
     },
     {
@@ -215,7 +215,7 @@ NICKNAME2_CUSTOMERS_OPINIONS_2 = [
         "mark": 6
     },
     {
-        "text": "",
+        "text": "-",
         "mark": 5
     },
     {
@@ -326,7 +326,7 @@ def get_customers_opinions(nickname):
             }
         if rank == "3":
             return {
-                "opinions": NICKNAME3_CUSTOMERS_OPINIONS_3
+                "opinions": NICKNAME2_CUSTOMERS_OPINIONS_3
             }
 
         abort(404)

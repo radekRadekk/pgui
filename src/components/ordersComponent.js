@@ -54,7 +54,7 @@ export default function OrdersComponent(props) {
             </Grid>
           </Grid>
           : <Grid container spacing={2} justifyContent="center" paddingTop="10px">
-            <Typography variant="h7">
+            <Typography variant="h6">
               <b>{t("lackOfOrdersText")}</b>
             </Typography>
           </Grid>
