@@ -5,10 +5,11 @@ import App from './App';
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import CustomersOpinions from './routes/customersOpinions';
-import ReturnedOrders from './routes/returnedOrders';
-import UnpaidOrders from './routes/unpaidOrders';
-import UnsentOrders from './routes/unsentOrders';
+import CustomersOpinionsPage from './routes/customersOpinionsPage';
+import ReturnedOrdersPage from './routes/returnedOrdersPage';
+import UnpaidOrdersPage from './routes/unpaidOrdersPage';
+import UnsentOrdersPage from './routes/unsentOrdersPage';
+import LoginPage from './routes/loginPage';
 
 const resources = {
   en: {
@@ -107,11 +108,12 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="customers-opinions" element={<CustomersOpinions />} />
-        <Route path="returned-orders" element={<ReturnedOrders />} />
-        <Route path="unpaid-orders" element={<UnpaidOrders />} />
-        <Route path="unsent-orders" element={<UnsentOrders />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<App />} />
+        <Route path="customers-opinions" element={<CustomersOpinionsPage />} />
+        <Route path="returned-orders" element={<ReturnedOrdersPage />} />
+        <Route path="unpaid-orders" element={<UnpaidOrdersPage />} />
+        <Route path="unsent-orders" element={<UnsentOrdersPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
