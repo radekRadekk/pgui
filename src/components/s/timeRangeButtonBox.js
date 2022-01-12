@@ -9,13 +9,13 @@ import { Box } from "@mui/material";
 export default function TimeRangeButtonBox(props) {
   return (
     <Box bgcolor="primary.main" borderRadius={2}>
-      <IconButton size='small' onClick={props.previousWeekOnClick}>
+      <IconButton size='small' onClick={props.previousWeekOnClick} disabled={props.previousWeekDisabled}>
         <TravelExploreIcon />
       </IconButton>
-      <IconButton size='small' onClick={props.currentWeekOnClick}>
+      <IconButton size='small' onClick={props.currentWeekOnClick} disabled={props.currentWeekDisabled}>
         <TodayIcon />
       </IconButton>
-      <IconButton size='small' onClick={props.todayOnClick}>
+      <IconButton size='small' onClick={props.todayOnClick} disabled={props.todayDisabled}>
         <TimerIcon />
       </IconButton>
     </Box>

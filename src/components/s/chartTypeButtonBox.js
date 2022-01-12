@@ -7,10 +7,10 @@ import { Box } from "@mui/material";
 export default function ChartTypeButtonBox(props) {
   return (
     <Box bgcolor="primary.main" borderRadius={2}>
-      <IconButton size='small' onClick={props.lineOnClick}>
+      <IconButton size='small' onClick={props.lineOnClick} disabled={props.lineDisabled}>
         <ShowChartIcon />
       </IconButton>
-      <IconButton size='small' onClick={props.barOnClick}>
+      <IconButton size='small' onClick={props.barOnClick} disabled={props.barDisabled}>
         <BarChartIcon />
       </IconButton>
     </Box>

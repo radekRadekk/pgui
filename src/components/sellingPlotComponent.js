@@ -162,13 +162,20 @@ export default function SellingPlotComponent() {
           </Typography>
         </Grid>
         <Grid item pl={1}>
-          <ChartTypeButtonBox barOnClick={barOnClick} lineOnClick={lineOnClick} />
+          <ChartTypeButtonBox
+            barOnClick={barOnClick} barDisabled={chartType === "bar"}
+            lineOnClick={lineOnClick} lineDisabled={chartType === "line"} />
         </Grid>
         <Grid item pl={1}>
-          <MeasureTypeButtonBox moneyOnClick={moneyOnClick} pieceOnClick={pieceOnClick} />
+          <MeasureTypeButtonBox
+            moneyOnClick={moneyOnClick} moneyDisabled={measureType === "money"}
+            pieceOnClick={pieceOnClick} pieceDisabled={measureType === "piece"} />
         </Grid>
         <Grid item pl={1}>
-          <TimeRangeButtonBox todayOnClick={todayOnClick} currentWeekOnClick={currentWeekOnClick} previousWeekOnClick={previousWeekOnClick} />
+          <TimeRangeButtonBox
+            todayOnClick={todayOnClick} todayDisabled={timeRange === "today"}
+            currentWeekOnClick={currentWeekOnClick} currentWeekDisabled={timeRange === "current_week"}
+            previousWeekOnClick={previousWeekOnClick} previousWeekDisabled={timeRange === "previous_week"} />
         </Grid>
       </Grid>
     </Grid>
