@@ -53,7 +53,9 @@ const resources = {
       lackOfOpinionsText: "You don't have opinions from customers yet.",
       mark: "Mark",
       text: "Text",
-      username: "Username"
+      username: "Username",
+      name: "Name",
+      quantity: "Quantity"
     }
   },
   pl: {
@@ -97,7 +99,9 @@ const resources = {
       lackOfOpinionsText: "Nie posiadasz jeszcze opinii od kupującego.",
       mark: "Ocena",
       text: "Tekst",
-      username: "Nazwa użytkownika"
+      username: "Nazwa użytkownika",
+      name: "Nazwa",
+      quantity: "Liczba sztuk"
     }
   }
 };
