@@ -55,7 +55,8 @@ const resources = {
       text: "Text",
       username: "Username",
       name: "Name",
-      quantity: "Quantity"
+      quantity: "Quantity",
+      lackOfTopOffersText: "You don't have top offers yet."
     }
   },
   pl: {
@@ -101,7 +102,8 @@ const resources = {
       text: "Tekst",
       username: "Nazwa użytkownika",
       name: "Nazwa",
-      quantity: "Liczba sztuk"
+      quantity: "Liczba sztuk",
+      lackOfTopOffersText: "Nie posiadasz jeszcze najlepszych ofert."
     }
   }
 };
