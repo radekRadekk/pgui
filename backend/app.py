@@ -54,6 +54,29 @@ def generate_previous_week_sellings(x):
     return data
 
 
+SELLING_TIPS = [
+    {
+        "pl": "Bądź ekologiczny!",
+        "en": "Be ECO!"
+    },
+    {
+        "pl": "Bądź pomocny!",
+        "en": "Be helpfull!"
+    },
+    {
+        "pl": "Dawaj, sprzedawaj!",
+        "en": "Let's sell!"
+    },
+    {
+        "pl": "Analizuj rynek!",
+        "en": "Analyze market!"
+    },
+    {
+        "pl": "Znajdź nowe kanały sprzedaży!",
+        "en": "Find new selling channels!"
+    }
+]
+
 NICK1 = "JanKowalski"
 NICK2 = "RomanNowak"
 NICK3 = "SebastianOlech"
@@ -111,6 +134,13 @@ def get_sellings(nickname):
         return get_sellings_previous_week(nickname)
 
     abort(404)
+
+
+@app.route("/sellingTips")
+def get_selling_tips():
+    return {
+        "sellingTips": SELLING_TIPS
+    }
 
 
 def get_sellings_today(nickname):

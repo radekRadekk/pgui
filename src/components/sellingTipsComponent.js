@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Button from "@material-ui/core/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import i18n from "i18next";
 import Typography from "@material-ui/core/Typography";
 
@@ -11,11 +11,20 @@ export default function SellingTipsComponent() {
   const { t } = useTranslation();
 
   const [tips, setTips] = useState([
-    { en: "Let's sell", pl: "Dawaj sprzedawaj" },
-    { en: "Drink fervex", pl: "Pij fervex" },
-    { en: "I'll sell the opel and slippers", pl: "Sprzedam opla i kapcie" }
+    {
+      "pl": "",
+      "en": ""
+    }
   ]);
   const [tipIdx, setTipIdx] = useState(0);
+
+  useEffect(() => {
+    fetch(`http://127.0.0.1:5000/sellingTips`)
+      .then(response => response.json())
+      .then(data => {
+        setTips(data["sellingTips"]);
+      });
+  }, [])
 
   return (
     <Grid container
@@ -36,7 +45,7 @@ export default function SellingTipsComponent() {
         <Grid container align="center">
           <Grid item xs={12}>
             <Typography variant="h6">
-              {i18n.language === "en" ? tips[tipIdx].en : tips[tipIdx].pl}
+              {i18n.language === "en" ? tips[tipIdx]["en"] : tips[tipIdx]["pl"]}
             </Typography>
           </Grid>
           <Grid item xs={12}>
