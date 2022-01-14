@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
-import ChartTypeButtonBox from "./s/chartTypeButtonBox"
-import MeasureTypeButtonBox from "./s/measureTypeButtonBox"
-import TimeRangeButtonBox from "./s/timeRangeButtonBox"
+import ChartTypeButtonBox from "./chartTypeButtonBox"
+import MeasureTypeButtonBox from "./measureTypeButtonBox"
+import TimeRangeButtonBox from "./timeRangeButtonBox"
 import { useTheme } from '@material-ui/core/styles';
 import ReactEcharts from "echarts-for-react";
 
@@ -145,7 +145,6 @@ export default function SellingPlotComponent(props) {
   return <Grid container
     spacing={1}
     borderRadius="20px"
-    margin="auto"
     padding="10px"
     bgcolor={theme.palette.background.paper}>
     <Grid item xs={12}>

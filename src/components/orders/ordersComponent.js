@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
-import OrderCategoryComponent from "./s/orderCategoryComponent"
+import OrderCategoryComponent from "./orderCategoryComponent"
 import { useTheme } from '@material-ui/core/styles';
 
 export default function OrdersComponent(props) {

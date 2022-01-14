@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import OpinionCategoriesButtonBox from "./s/opinionCategoriesButtonBox";
+import OpinionCategoriesButtonBox from "./opinionCategoriesButtonBox";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";

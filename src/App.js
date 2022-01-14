@@ -1,49 +1,23 @@
-import "./App.css";
 import { ThemeProvider } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import { grey, green, blue } from "material-ui/colors";
-
 import CssBaseline from "@mui/material/CssBaseline";
 import React, { useState, useEffect } from "react";
-
-import SellingTipsComponent from "./components/sellingTipsComponent";
-import SellingPlotComponent from "./components/sellingPlotComponent";
-import OrdersComponent from "./components/ordersComponent";
-import OffersRankComponent from "./components/offersRankComponent";
-import CustomerOpinionsComponent from "./components/customerOpinionsComponent";
+import SellingTipsComponent from "./components/sellingTips/sellingTipsComponent";
+import SellingPlotComponent from "./components/sellingPlot/sellingPlotComponent";
+import OrdersComponent from "./components/orders/ordersComponent";
+import OffersRankComponent from "./components/offersRank/offersRankComponent";
+import CustomerOpinionsComponent from "./components/customerOpinions/customerOpinionsComponent";
 import Grid from "@mui/material/Grid";
-import NavbarComponent from "./components/navbarComponent";
-
-export const light = {
-  palette: {
-    type: "light",
-    primary: {
-      main: blue[200],
-    },
-    background: {
-      default: "#bdbdbd"
-    },
-  }
-};
-
-export const dark = {
-  palette: {
-    type: "dark",
-    primary: {
-      main: blue[800],
-    },
-  }
-};
-
-
+import NavbarComponent from "./components/navbar/navbarComponent";
+import {darkTheme, lightTheme} from "./themes";
 
 function App() {
   const [theme, setTheme] = useState(true);
-  const appliedTheme = createTheme(theme ? light : dark);
+  const appliedTheme = createTheme(theme ? lightTheme : darkTheme);
   const [nickname, setNickname] = useState("")
   const [nicknamesList, setNicknamesList] = useState([])
-
 
   useEffect(() => {
     fetch(`http://127.0.0.1:5000//masterUsers/${localStorage.getItem('user')}/users`)
@@ -64,7 +38,7 @@ function App() {
         }}
       />
       <NavbarComponent nicknames={nicknamesList} currentNickname={nickname} setNickname={(nickname) => setNickname(nickname)} changeTheme={() => setTheme(!theme)}></NavbarComponent>
-      <Grid container align="center" justifyContent="center" spacing={0}>
+      <Grid container>
         <Grid item xs={12} md={8}>
           <Grid container>
             <Grid item xs={12} padding="20px">

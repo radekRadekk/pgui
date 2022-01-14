@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
-import OffersRankSortingButtonBox from "./s/offersRankSortingButtonBox";
+import OffersRankSortingButtonBox from "./offersRankSortingButtonBox";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';

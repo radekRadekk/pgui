@@ -10,7 +10,7 @@ export default function OpinionCategoriesButtonBox(props) {
   const theme = useTheme();
 
   return (
-    <Box bgcolor={theme.palette.primary.main} borderRadius={3} >
+    <Box bgcolor={theme.palette.primary.main} borderRadius={2} >
       <IconButton size='small' onClick={() => props.setRank(3)} disabled={props.rank === 3}>
         <SentimentSatisfiedRoundedIcon />
       </IconButton>
