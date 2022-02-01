@@ -1,21 +1,25 @@
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+You must have npm, Python and PIP installed.
 
-### `npm start`
+## Before first run
 
-Runs the app in the development mode.\
+1. Clone the repository.
+2. In *backend* directory run: `pip install -r requirements.txt`
+3. In main directory run: `npm install . `
+
+## Run
+
+You have to run backend app and frontend app.
+
+### Backend app
+
+In *backend* directory run: `flask run`
+
+Backend app is running on port 5000
+
+### Frontend app
+
+In main directory run: `npm start`
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
